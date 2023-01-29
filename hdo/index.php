@@ -42,7 +42,8 @@ function tod2str($tod)
    
   try
   {
-   include '/var/www/rojicek.cz/web/db/includedb.php'; 
+   include "/var/www/rojicek.cz/web/db/includedb.php"; 
+   
       
   echo "Plati pro: " . date('d.m. H:i', time()) . "<br>";
   echo "<p>";

@@ -84,7 +84,7 @@ function tod2str($tod)
    $selectDNESKA = " select DoW,peakStart, hour(STR_TO_DATE(peakStart, '%H:%i:%s'))/24+ minute(STR_TO_DATE(peakStart, '%H:%i:%s'))/24/60 as start, peakStop , hour(STR_TO_DATE(peakStop , '%H:%i:%s'))/24+ minute(STR_TO_DATE(peakStop , '%H:%i:%s'))/24/60 as konec from hdo_tbl where date(now())>=dateStart AND date(now())<=dateEnd AND ".$DoWdnes."  = DoW order by timeid";  
    $hdoResultsDNESKA  = $databaseConnection->query ($selectDNESKA) ;// or die (mysql_error());
    
-   $selectZITRA = " select DoW,peakStart, hour(STR_TO_DATE(peakStart, '%H:%i:%s'))/24+ minute(STR_TO_DATE(peakStart, '%H:%i:%s'))/24/60 as start, peakStop , hour(STR_TO_DATE(peakStop , '%H:%i:%s'))/24+ minute(STR_TO_DATE(peakStop , '%H:%i:%s'))/24/60 as konec from hdo_tbl where date(now())>=dateStart AND date(now())<=dateEnd AND ".$DoWzitra."  = DoW order by timeid";  
+   $selectZITRA = " select DoW,peakStart, hour(STR_TO_DATE(peakStart, '%H:%i:%s'))/24+ minute(STR_TO_DATE(peakStart, '%H:%i:%s'))/24/60 as start, peakStop , hour(STR_TO_DATE(peakStop , '%H:%i:%s'))/24+ minute(STR_TO_DATE(peakStop , '%H:%i:%s'))/24/60 as konec from hdo_tbl where date(now()+interval 1 day)>=dateStart AND date(now()+interval 1 day)<=dateEnd AND ".$DoWzitra."  = DoW order by timeid";  
    $hdoResultsZITRA  = $databaseConnection->query ($selectZITRA) ;// or die (mysql_error());
 
    
